@@ -22,7 +22,7 @@ function init(questions) {
       {
         type: "input",
         message:
-          "What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.?",
+          "What are the steps required to install your project?",
         name: "installation",
       },
       {
@@ -43,8 +43,8 @@ function init(questions) {
         choices: ["MIT", "ISC", "GNUPLv3", "Apache License 2.0", "Boost Software License"],
       },
       {
-        type: "input",
-        message: "Have questions for the project?",
+        type: "input
+        message: "What is the email for contact for questions regarding the project?",
         name: "email",
       },
       {
@@ -61,7 +61,7 @@ function init(questions) {
     .then((response) => {
       console.log(response);
       const readmeTemplate = generateMarkdown(response);
-      fs.writeFile("README.md", readmeTemplate, (error) => {
+      fs.writeFile(`${response.title}_README.md`, readmeTemplate, (error) => {
         return error
           ? console.error(error)
           : console.log("Readme has been generated successfully!");
@@ -69,12 +69,4 @@ function init(questions) {
     });
 }
 init();
-// function to write to README file
-function writeToFile(fileName) {
-  fs.writeFile(`README.md`, readmeTemplate, (error) => {
-    return error
-      ? console.error(error)
-      : console.log("Readme has been generated successfully!");
-  });
-}
 
