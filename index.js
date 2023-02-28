@@ -43,7 +43,7 @@ function init(questions) {
         choices: ["MIT", "ISC", "GNUPLv3", "Apache License 2.0", "Boost Software License"],
       },
       {
-        type: "input
+        type: "input"
         message: "What is the email for contact for questions regarding the project?",
         name: "email",
       },
